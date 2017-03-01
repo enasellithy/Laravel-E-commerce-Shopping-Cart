@@ -44,16 +44,12 @@
                             {{substr($ad->dssc,0,25)}}
                             {{strlen($ad->desc) > 100 ? "...":""}}
                         </p>
-                        <a href="category/{{App\Category::find($ad->cat_id)->id}}/show" class="btn btn-info pull-right">
+                        <a href="category/{{App\Category::find($ad->cat_id)->id}}/show">
                             {{App\Category::find($ad->cat_id)->name}}
                         </a>
                         <p>
-                            @if (Auth::guest())
-                            <a href="adv/{{$ad->id}}/show" class="btn btn-default">More Info</a>
-                            @else
                             <a href="add-to-cart/{{$ad->id}}/cart" class="btn btn-primary fa fa-shopping-cart">Add To Cart</a> 
                             <a href="adv/{{$ad->id}}/show" class="btn btn-default">More Info</a>
-                            @endif
                         </p>
                     </div>
                 </div>

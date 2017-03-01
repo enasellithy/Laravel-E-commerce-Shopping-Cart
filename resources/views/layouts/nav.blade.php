@@ -18,15 +18,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right rtl">
                      <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">
-                              {{trans('message.Login')}} 
-                            </a></li>
-                             <li><a href="{{ route('register') }}">
-                               {{trans('message.Register')}} 
-                            </a></li>
-                        @else
-                        <li>
+                     <li>
                             <a href="{{route('product.shoppingCart')}}">
                                 <i class="fa fa-shopping-cart"></i>Shopping Cart
                                 <span class="badge">
@@ -34,6 +26,15 @@
                                 </span>
                             </a>
                         </li>
+                        @if (Auth::guest()) 
+                            <li><a href="{{ route('login') }}">
+                              {{trans('message.Login')}} 
+                            </a></li>
+                             <li><a href="{{ route('register') }}">
+                               {{trans('message.Register')}} 
+                            </a></li>
+                        @else
+                        
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>

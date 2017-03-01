@@ -17,6 +17,11 @@ class Adv extends Model
     {
     	return $this->hasMany('App\Category');
     }
+
+    public function rorders() 
+    {
+        return $this->hasMany('App\Rorder');
+    }
     
     /*
     public function cats()

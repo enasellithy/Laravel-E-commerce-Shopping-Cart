@@ -20,7 +20,7 @@ Shopping Cart
                       <span class="caret"></span></button>
                       <ul class="dropdown-menu">
                         <li><a href="#">Reduce By 1</a></li>
-                        <li><a href="#">Reduce All</a></li>
+                         <li><a href="#">Reduce All</a></li>
                       </ul>
                     </div>
                 </li>
@@ -35,9 +35,15 @@ Shopping Cart
 </div>
 <hr>
 <div class="row">
-    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+  @if (Auth::guest())
+  <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+       <a href="{{url('login')}}" type="button" class="btn btn-success">Checkout</a>
+    </div>
+  @else
+  <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
        <a href="{{route('checkout')}}" type="button" class="btn btn-success">Checkout</a>
     </div>
+  @endif
 </div>
 @else
 <div class="row">
